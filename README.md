@@ -1,24 +1,86 @@
-# README
+[![](https://img.shields.io/badge/Microverse-Afolabi%20Akorede-blueviolet)](https://github.com/brainconnect93)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Blog-App
 
-* Ruby version
+> This is a fully functional website that shows the list of posts and empower readers to interact with them by adding comments, managing their blog posts and liking posts.
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby on Rails [click here >>](https://guides.rubyonrails.org/)
+- Rubocop: 
+- ERD schema diagram
+- Ruby
 
-* Database creation
+## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+### Prerequisites
+```
+  Ruby
+  Ruby on Rails
+  PostgreSQL
+```
 
-* How to run the test suite
+### Setup
+Clone this repository or download the Zip folder:
+```
+  $ git clone https://github.com/brainconnect93/Blog-App.git
+  $ cd Blog-App
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Install
+Install all project dependencies by running the command below
+```
+  $ bundle install
+```
 
-* Deployment instructions
+### Run the application
+```
+  Linux
+  $ bin/rails server
+```
 
-* ...
+```
+  Windows
+  $ ruby bin/rails server
+```
+
+### Check linter errors
+```
+  $ rubocop
+```
+
+
+### Run tests
+
+```
+  $ Rspec spec
+
+```
+
+## Author
+👤 **Afolabi Akorede**
+
+- GitHub: [@brainconnect93](https://github.com/brainconnect93)
+- Twitter: [@brainconnect0](https://twitter.com/brainconnect0)
+- LinkedIn: [Afolabi Akorede](https://linkedin.com/in/brainconnect93)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to check the
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to [Microverse](https://bit.ly/MicroverseTN) for giving me this project to work on
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
+
+<br />

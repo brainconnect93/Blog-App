@@ -3,8 +3,10 @@ class Post < ApplicationRecord
     has_many :comments
     has_many :likes
 
+    after_save :updates_posts_counter
+
     def updates_posts_counter
-        posts.increment!(:PostsCounter)
+        user.increment!(:PostsCounter)
     end
 
     def recent_comments

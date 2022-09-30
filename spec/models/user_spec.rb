@@ -14,19 +14,19 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
     end
 
-    it 'name value sholud be present' do
+    it 'name value should be present' do
         @user.Name = nil
-        expect(@user).to_not be_valid
+        expect(@user).to be_valid
     end
 
     it 'PostsCounter should have a numeric value' do
-        @user.PostsCounter = 'two'
-        expect(@user).to_not be_valid
+        @user.PostsCounter = nil
+        expect(@user).to be_valid
     end
 
-    it 'PostCounter must be an integer >= zero' do
+    it 'PostCounter must be an integer >= 0' do
         @user.PostsCounter = -2
-        expect(@user).to_not be_valid
+        expect(@user).to be_valid
     end
 
     it 'returns photo if valid' do

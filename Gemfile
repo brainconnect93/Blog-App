@@ -12,7 +12,7 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-group :development, :test do  
+group :development, :test do
   gem 'rspec-rails'
 end
 

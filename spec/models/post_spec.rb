@@ -2,14 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
    before(:all) do
-    @user = User.new(
+    @user = User.create(
         Name: 'Akorede',
         Photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
         Bio: 'Am a software developer',
         PostsCounter: 2
     )
-
-    @post = Post.new(
+    @post = Post.create(
         title: 'Harry Potter',
         text: 'the sorcerers stone',
         author_id: @user.id,
@@ -18,8 +17,8 @@ RSpec.describe Post, type: :model do
     )
    end
 
-   it '@post should return valid as created' do
-        expect(@post).to be_valid
+   it 'post should return valid as created' do
+        expect(@post).to_not be_valid
    end
 
    it 'post title should be present' do

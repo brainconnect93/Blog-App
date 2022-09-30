@@ -2,17 +2,17 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
    before(:all) do
-    @user = User.create(
+    @user = User.new(
         Name: 'Akorede',
         Photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
         Bio: 'Am a software developer',
         PostsCounter: 2
     )
 
-    @post = Post.create(
-        author_id: @user.id,
+    @post = Post.new(
         title: 'Harry Potter',
         text: 'the sorcerers stone',
+        author_id: @user.id,
         comments_counter: 4,
         likes_counter: 4
     )
@@ -40,7 +40,7 @@ RSpec.describe Post, type: :model do
    end
 
    it 'post likes_comment should be numeric >= 0' do
-        @post.likes_comment = -4
+        @post.likes_counter = 'one'
         expect(@post).to_not be_valid
    end
 end

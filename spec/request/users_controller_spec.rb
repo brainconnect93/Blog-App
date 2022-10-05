@@ -29,6 +29,14 @@ RSpec.describe 'UsersController', type: :request do
         it 'returns a 200 status code' do
             expect(@link).to eq(200)
         end
+        
+        it 'renders the show template' do
+            expect( get '/users/show').to render_template('users/show')
+        end
+        
+        it 'loads the user to includes correct placeholder text' do
+            expect(response.body).to include('Here is a list of posts for a given user')
+        end
     end
 end
     

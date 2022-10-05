@@ -13,8 +13,8 @@ gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 # Use sqlite3 as the database for Active Record

@@ -19,5 +19,16 @@ RSpec.describe 'UsersController', type: :request do
             expect(response.body).to include('My favourite players blog')
         end
     end
+
+    describe "GET '/show' page" do
+        before(:all) do
+            @link = get '/users/show';
+            get '/users/show';
+        end
+
+        it 'returns a 200 status code' do
+            expect(@link).to eq(200)
+        end
+    end
 end
     

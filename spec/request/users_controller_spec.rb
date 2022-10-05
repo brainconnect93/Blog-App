@@ -10,6 +10,10 @@ RSpec.describe 'UsersController', type: :request do
         it 'returns a 200 status code' do
             expect(@link).to eq(200)
         end
+
+        it 'renders the index template' do
+            expect( get '/users').to render_template('users/index')
+        end
     end
 end
     

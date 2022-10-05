@@ -29,5 +29,13 @@ describe PostsController, type: :request do
         it 'returns a 200 status code' do
             expect(@link).to eq(200)
         end
+
+        it 'renders the show template' do
+            expect( get '/users/:id/posts/:id').to render_template('posts/show')
+        end
+
+        it 'loads the posts to includes correct placeholder text' do
+            expect(response.body).to include('I Love Ruby on Rails')
+        end
     end
 end

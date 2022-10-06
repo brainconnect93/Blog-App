@@ -1,2 +1,10 @@
-<h2>I come in peace</h2>
-<p>Lets go to the Masjid</p>
+<h2>The User Post</h2>
+<div class="container">
+        <div class="image">
+          <img src="<%= @user.Photo %>" class="img-user" alt="<%= @user.Name %>" />
+        </div>
+        <div class="details">
+          <h1 class="details-head"><%= @user.Name %></h1>
+          <p class="details-para">Number of posts: <%= @user.PostsCounter || 0 %></p>
+        </div>
+</div>

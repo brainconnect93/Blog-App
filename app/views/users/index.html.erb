@@ -1,2 +1,12 @@
 <h1>My Favourite blog App</h1>
 
+<section class="user-container">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+    <div class="container">
+        
+    </div>
+    <% end %>
+  <% end %>
+</section>
+

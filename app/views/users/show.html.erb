@@ -1,21 +1,13 @@
 <h1>My User Profile</h1>
 
-<div class="container">
-        <div class="image">
-          <img src="<%= @user.Photo %>" class="img-user" alt="<%= @user.Name %>" />
-        </div>
-        <div class="details">
-          <h1 class="details-head"><%= @user.Name %></h1>
-          <p class="details-para">Number of posts: <%= @user.PostsCounter || 0 %></p>
-        </div>
-</div>
+<%= render "cross" %>
 
 <div class="bio">
     <h3 class="bio-head">Bio</h3>
     <p class="bio-para"><%= @user.Bio %></p>
 </div>
 <section>
- <% @user.posts.each do |post| %>
+ <% @user.recent_posts.each do |post| %>
  <%= link_to  user_post_path(@user, post.id) do %>
    <div class="post-container">
      <h2>Post: <%= post.title %></h2>

@@ -9,7 +9,8 @@
 </section>
 
 <ul>
-    <% @post.comments.each do |comment| %>
-      <li><%= comment.user.Name %><%= comment.text %></li>
+    <% @post.recent_comments.each do |comment| %>
+      <li><%= comment.user.Name %>: <%= comment.text %></li>
  <% end %>
 </ul>
+

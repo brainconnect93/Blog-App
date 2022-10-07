@@ -1,5 +1,4 @@
 <h2>The User Post</h2>
-<div>
 <div class="container">
         <div class="image">
           <img src="<%= @user.Photo %>" class="img-user" alt="<%= @user.Name %>" />
@@ -9,10 +8,11 @@
           <p class="details-para">Number of posts: <%= @user.PostsCounter || 0 %></p>
         </div>
 </div>
+
 <% @user.posts.each do |post| %>
 <section>
-  <%= link_to user_post_path(@user, post) do %>%
-    <h2><%= post.title %></h2>
+  <%= link_to user_post_path(@user, post) do %>
+    <h2>Post : <%= post.id %></h2>
  <% end %>
     <p><%= post.text%></p>
     <div class="post-details">
@@ -20,18 +20,14 @@
       <span class="post-details-para">Likes: <%= post.likes_counter || 0 %></span>
     </div>
 </section>
+<% end %>
 
 <ul>
- <% if post.recent_comments.length == 0 %>
-    <p><%= No comments are added! %></p>
-    <% else %>
-    <% post.recent_comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
       <li><%= comment.users.Name %><%= comment.text %></li>
  <% end %>
- <% end %>
- <% end %>
 </ul>
-    <button>
-        Pagination
-    </button>
-</div>
+    
+<button>
+  Pagination
+</button>

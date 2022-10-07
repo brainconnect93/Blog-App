@@ -1,13 +1,15 @@
 <h1>Single Post by a user</h1>
-
 <section>
- <h2><%= @post.title %></h2>
- <% end %>
+    <h2><%= @post.title %> By: <%= @post.user.Name %></h2>
     <div class="post-details">
-      <span class="post-details-para">Comments: <%= post.comments_counter || 0 %></span>
-      <span class="post-details-para">Likes: <%= post.likes_counter || 0 %></span>
+      <span class="post-details-para">Comments: <%= @post.comments_counter || 0 %></span>
+      <span class="post-details-para">Likes: <%= @post.likes_counter || 0 %></span>
     </div>
-
-    <p><%= post.text%></p>
-
+    <p><%= @post.text%></p>
 </section>
+
+<ul>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.user.Name %><%= comment.text %></li>
+ <% end %>
+</ul>

@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# first_user = User.create(Name: 'Tom', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Mexico', PostsCounter: 0)
+# second_user = User.create(Name: 'Lilly', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Poland', PostsCounter: 0)
+# third_user = User.create(Name: 'Thomas', Photo: 'https://unsplash.com/photos/F_-0BxGuVvo', Bio: 'Teacher from Rwanda', PostsCounter: 0)
+
+
+first_post = Post.create(user: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+first_post = Post.create(user: first_user, title: 'Welcome', text: 'This is ', comments_counter: 0, likes_counter: 0)
+
+Comment.create(post: first_post, user: second_user, text: 'Hi Tom!' )

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'UsersController', type: :request do
   describe "GET './index' page" do
-    before(:all) do
+    before:each do
       @link = get '/users'
       get '/users'
     end
@@ -16,26 +16,22 @@ RSpec.describe 'UsersController', type: :request do
     end
 
     it 'loads the users to includes correct placeholder text' do
-      expect(response.body).to include('My favourite players blog')
+      expect(response.body).to include('My Favourite blog App')
     end
   end
 
   describe "GET '/show' page" do
     before(:all) do
-      @link = get '/users/show'
-      get '/users/show'
+      @link = get '/users/1'
+      get '/users/1'
     end
 
     it 'returns a 200 status code' do
       expect(@link).to eq(200)
     end
 
-    it 'renders the show template' do
-      expect(get('/users/show')).to render_template('users/show')
-    end
-
     it 'loads the user to includes correct placeholder text' do
-      expect(response.body).to include('Here is a list of posts for a given user')
+      expect(response.body).to include('My User Profile')
     end
   end
 end

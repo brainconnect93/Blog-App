@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe PostsController, type: :request do
   describe "GET '/index' page" do
-    before(:all) do
-      @link = get '/users/:id/posts'
-      get '/users/:id/posts'
+    before:each do
+      @link = get '/users/1/posts'
+      get '/users/1/posts'
     end
 
     it 'returns a 200 status code' do
@@ -12,18 +12,18 @@ describe PostsController, type: :request do
     end
 
     it 'renders the index template' do
-      expect(get('/users/:id/posts')).to render_template('posts/index')
+      expect(get('/users/1/posts')).to render_template('posts/index')
     end
 
     it 'loads the posts to includes correct placeholder text' do
-      expect(response.body).to include('I come in peace')
+      expect(response.body).to include('The User Post')
     end
   end
 
   describe "GET '/show' page" do
     before(:all) do
-      @link = get '/users/:id/posts/:id'
-      get '/users/:id/posts/:id'
+      @link = get '/users/1/posts/1'
+      get '/users/1/posts/1'
     end
 
     it 'returns a 200 status code' do
@@ -31,11 +31,11 @@ describe PostsController, type: :request do
     end
 
     it 'renders the show template' do
-      expect(get('/users/:id/posts/:id')).to render_template('posts/show')
+      expect(get('/users/1/posts/1')).to render_template('posts/show')
     end
 
     it 'loads the posts to includes correct placeholder text' do
-      expect(response.body).to include('I Love Ruby on Rails')
+      expect(response.body).to include('Single Post by a user')
     end
   end
 end

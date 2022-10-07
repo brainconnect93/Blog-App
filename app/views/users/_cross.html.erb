@@ -1,0 +1,9 @@
+<div class="container">
+        <div class="image">
+          <img src="<%= @user.Photo %>" class="img-user" alt="<%= @user.Name %>" />
+        </div>
+        <div class="details">
+          <h1 class="details-head"><%= @user.Name %></h1>
+          <p class="details-para">Number of posts: <%= @user.PostsCounter || 0 %></p>
+        </div>
+</div>

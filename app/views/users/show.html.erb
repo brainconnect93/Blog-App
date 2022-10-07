@@ -1,7 +1,25 @@
-<h1>Here is a list of posts for a given user</h1>
-<ul>
-    <li>Ronaldo</li>
-    <li>Messi</li>
-    <li>Neymar</li>
-    <li>Kaka</li>
-</ul>
+<h1>My User Profile</h1>
+
+<%= render "cross" %>
+
+<div class="bio">
+    <h3 class="bio-head">Bio</h3>
+    <p class="bio-para"><%= @user.Bio %></p>
+</div>
+<section>
+ <% @user.recent_posts.each do |post| %>
+ <%= link_to  user_post_path(@user, post.id) do %>
+   <div class="post-container">
+     <h2>Post: <%= post.title %></h2>
+     <p><%= post.text %></p>
+    </div>
+     <div class="post-details">
+     <span class="post-details-para">Comments: <%= post.comments_counter || 0 %></span>
+     <span class="post-details-para">Likes: <%= post.likes_counter || 0 %></span>
+     </div>
+<% end %>
+<% end %>
+</section>
+<button class="button"><%= link_to "see all posts", user_posts_path(@user) %></button>
+
+

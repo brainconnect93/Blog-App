@@ -1,18 +1,8 @@
 <h2>The User Post</h2>
+
 <%= render "users/cross" %>
 
-<% @user.recent_posts.each do |post| %>
-<section>
-  <%= link_to user_post_path(@user, post) do %>
-    <h2>Post : <%= post.id %></h2>
- <% end %>
-    <p><%= post.text%></p>
-    <div class="post-details">
-      <span class="post-details-para">Comments: <%= post.comments_counter || 0 %></span>
-      <span class="post-details-para">Likes: <%= post.likes_counter || 0 %></span>
-    </div>
-</section>
-<% end %>
+<%= render "post" %>
     
 <button>
   Pagination

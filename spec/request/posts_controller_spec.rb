@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe PostsController, type: :request do
   describe "GET '/index' page" do
-    before:each do
+    before :each do
       @link = get '/users/1/posts'
       get '/users/1/posts'
     end
@@ -21,7 +21,7 @@ describe PostsController, type: :request do
   end
 
   describe "GET '/show' page" do
-    before(:all) do
+    before :each do
       @link = get '/users/1/posts/1'
       get '/users/1/posts/1'
     end

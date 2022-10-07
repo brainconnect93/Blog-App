@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'UsersController', type: :request do
   describe "GET './index' page" do
-    before:each do
+    before :each do
       @link = get '/users'
       get '/users'
     end

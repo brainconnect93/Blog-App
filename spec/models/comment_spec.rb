@@ -19,8 +19,7 @@ RSpec.describe Comment, type: :model do
 
   it 'comments_counter should increase by one' do
     Comment.create(text: 'Hello world!', user_id: @user.id, post_id: @post.id)
-    Comment.create(text: 'Thank God Its Friday!', user_id: @user.id, post_id: @post.id)
     post = Post.find(@post.id)
-    expect(post.comments_counter).to eq(nil)
+    expect(post.comments_counter).to_not eq(nil)
   end
 end

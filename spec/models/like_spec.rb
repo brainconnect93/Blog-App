@@ -20,6 +20,6 @@ RSpec.describe Like, type: :model do
   it 'like_counter should increase by one' do
     Like.create(user_id: @user.id, post_id: @post.id)
     post = Post.find(@post.id)
-    expect(post.likes_counter).to eq(nil)
+    expect(post.likes_counter).to_not eq(nil)
   end
 end

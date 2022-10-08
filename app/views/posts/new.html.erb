@@ -5,7 +5,7 @@
       <div>
         <%= f.text_field :title, required: true %>
         <%= f.text_area :text, placeholder: "Write your post here.....", rows: 10, required: true %>
-         <% @article.errors.full_messages_for(:title).each do |message| %>
+         <% @post.errors.full_messages_for(:title).each do |message| %>
             <div><%= message %></div>
         <% end %>
         <%= f.submit "Create Post" %>

@@ -1,4 +1,6 @@
 <h1>Single Post by a user</h1>
+
+<div>
 <section>
     <h2><%= @post.title %> By: <%= @post.user.Name %></h2>
     <div class="post-details">
@@ -8,9 +10,17 @@
     <p><%= @post.text%></p>
 </section>
 
+<div>
+  <%= form_with url: "/users/#{@post.user_id}/posts/#{@post.id}/likes", scope: :like do |f| %>
+  <%= f.submit "Like " %>
+  <%end%>
+</div>
+
 <ul>
     <% @post.recent_comments.each do |comment| %>
       <li><%= comment.user.Name %>: <%= comment.text %></li>
  <% end %>
 </ul>
 
+<%= render "add_comments" %>
+</div>

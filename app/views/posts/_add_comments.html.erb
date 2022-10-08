@@ -1,0 +1,8 @@
+<div>
+    <%= form_with url:"/users/#{@post.user_id}/posts/#{@post.id}/comments", scope: :comment do |f| %>
+      <div>
+        <%= f.text_area :text, rows: 10, required: true %>
+        <%= f.submit "comment" %>
+      </div>
+    <% end %>
+</div>

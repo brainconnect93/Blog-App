@@ -1,0 +1,14 @@
+<h1> Create a new post </h1>
+
+<div>
+    <%= form_with model: @post, url:user_post_path, scope: :post do |f| %>
+      <div>
+        <%= f.text_field :title, required: true %>
+        <%= f.text_area :text, placeholder: "Write your post here.....", rows: 10, required: true %>
+         <% @post.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+        <%= f.submit "Create Post" %>
+      </div>
+    <% end %>
+</div>

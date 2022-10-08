@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params[:id])
     respond_to do |format|
       format.html do
-        if @post_new.save
+        if @post.save
           redirect_to "/users/#{@post_new.user_id}/posts/", message: 'Post created successfully'
         else
           render :new, status: 'Error: Post not created'

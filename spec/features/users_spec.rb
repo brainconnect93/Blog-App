@@ -57,5 +57,20 @@ RSpec.describe User, type: :feature do
         it 'should show user\'s name' do
             expect(page).to have_content(@user.first.Name)
         end
+
+        it 'should show number of posts user wrote' do
+            expect(page).to have_content(@user.first.PostsCounter)
+        end
+
+        it 'should show user\'s bio' do
+            expect(page).to have_content(@user.first.Bio)
+        end
+
+        it 'should show user\'s first 3 posts' do
+            recent_posts = @user.first.recent_posts
+            recent_posts.each do |post|
+                expect(page).to have_content(post.text)
+            end
+        end
     end
 end

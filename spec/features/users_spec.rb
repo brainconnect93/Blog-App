@@ -72,5 +72,20 @@ RSpec.describe User, type: :feature do
                 expect(page).to have_content(post.text)
             end
         end
+
+        it 'should show a button to view all user\'s posts' do
+            expect(page).to have_link('see all posts')
+        end
+
+        it 'should redirect to user\'s posts page when click a posts' do
+            recent_posts = @user.first.recent_posts
+            click_link recent_posts.first.title
+            expect(page).to have_current_path(user_post_path(@user.first, recent_posts.first))
+        end
+
+        it 'should redirect to user\'s posts page when click a button' do
+            click_link 'see all posts'
+            expect(page).to have_current_path(user_posts_path(@user.first))
+        end
     end
 end

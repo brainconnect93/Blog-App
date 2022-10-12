@@ -45,11 +45,6 @@ RSpec.describe Post, type: :feature do
         it 'should show the number of likes a post has' do
             expect(page).to have_content(@post_1.likes_counter)
         end
-
-        # it 'should redirects to the posts page when I click on a post' do
-        #     click_link 'Hello'
-        #     expect(page).to have_current_path(user_post_path(@user.ids, @post_1.id))
-        # end
     end
 
     describe 'Show page' do
@@ -91,6 +86,20 @@ RSpec.describe Post, type: :feature do
 
         it 'should show the post body' do
             expect(page).to have_content(@post_1.text)
+        end
+
+        it 'should show the username of the commentators' do
+            comments = @post_1.comments
+            comments.each do |comment|
+                expect(page).to have_content(comment.user.Name)
+            end
+        end
+
+        it 'should show the text of the comments' do
+            comments = @post_1.comments
+            comments.each do |comment|
+                expect(page).to have_content(comment.text)
+            end
         end
     end
 end

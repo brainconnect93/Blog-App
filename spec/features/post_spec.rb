@@ -80,5 +80,17 @@ RSpec.describe Post, type: :feature do
         it 'should show the user\'s name' do
             expect(page).to have_content(@post_1.user.Name)
         end
+
+        it 'should show the number of comments a post has' do
+            expect(page).to have_content(@post_1.comments_counter)
+        end
+
+        it 'should show the number of likes a post has' do
+            expect(page).to have_content(@post_1.likes_counter)
+        end
+
+        it 'should show the post body' do
+            expect(page).to have_content(@post_1.text)
+        end
     end
 end

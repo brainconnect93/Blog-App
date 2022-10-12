@@ -76,5 +76,9 @@ RSpec.describe Post, type: :feature do
         it 'should show the post title' do
             expect(page).to have_content(@post_1.title)
         end
+
+        it 'should show the user\'s name' do
+            expect(page).to have_content(@post_1.user.Name)
+        end
     end
 end

@@ -13,6 +13,7 @@ gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end

@@ -13,9 +13,9 @@ gem 'rails', '~> 7.0.4'
 gem 'sprockets-rails'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'database_cleaner'
 end
 
 # Use sqlite3 as the database for Active Record

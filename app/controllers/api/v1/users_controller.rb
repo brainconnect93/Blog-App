@@ -7,7 +7,7 @@ module Api
         end
 
         def show
-            @user = current_user
+            @user = @user.find(params[:id])
             render json: @user
         end
         end

@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def assign_role
-    self.role = 'user' if self.role.nil?
+    self.role = 'user' if role.nil?
   end
 end

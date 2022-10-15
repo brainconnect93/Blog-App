@@ -66,6 +66,10 @@ Install all project dependencies by running the command below
 - Twitter: [@brainconnect0](https://twitter.com/brainconnect0)
 - LinkedIn: [Afolabi Akorede](https://linkedin.com/in/brainconnect93)
 
+👤 **Victor Osagie**
+
+- GitHub: [@efoosag](https://github.com/efoosag)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!  

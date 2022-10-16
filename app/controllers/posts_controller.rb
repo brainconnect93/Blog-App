@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @posts = Post.includes(:comments).where(user_id: params[:user_id].to_i)
     @user = current_user
@@ -15,16 +16,36 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.new(post_params[:id])
-    respond_to do |format|
-      format.html do
-        if @post.save
-          redirect_to "/users/#{@post_new.user_id}/posts/", message: 'Post created successfully'
-        else
-          render :new, status: 'Error: Post not created'
-        end
-      end
+    @post = Posts.new(post_params)
+    @post.user = current_user
+
+    if @post.valid?
+      @post.save
+      redirect_to user_posts_path(current_user)
+    else
+      redirect_to new_post_path
     end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to user_post_path(current_user, @post)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   private
